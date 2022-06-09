@@ -15,4 +15,7 @@ export const theme = {
       secondary: '#A3A3A3',
     },
   },
+  shadow: {
+    sm: '0.5rem 0.5rem 1rem rgba(0,0,0,0.1)',
+  },
 };

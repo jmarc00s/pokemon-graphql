@@ -1,11 +1,13 @@
 import { useQuery } from '@apollo/client';
 import styled from 'styled-components';
 import Heading from './components/Heading';
+import PokemonCard from './components/PokemonCard';
 import { GET_POKEMONS } from './graphql/querys/pokemons';
+import { Pokemon } from './models/pokemon';
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,11 +23,9 @@ function App() {
   return (
     <Container>
       <Heading>Pokedex with GraphQL</Heading>
-      <ul>
-        {data?.pokemons.map((pokemon: { id: string; name: string }) => (
-          <li key={pokemon.id}>{pokemon.name}</li>
-        ))}
-      </ul>
+      {data?.pokemons.map((pokemon: Pokemon) => (
+        <PokemonCard key={pokemon.id} pokemon={pokemon} />
+      ))}
     </Container>
   );
 }
