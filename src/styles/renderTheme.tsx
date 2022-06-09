@@ -4,11 +4,7 @@ import { GlobalStyles } from './global';
 import { ThemeProvider } from 'styled-components';
 import { ReactNode } from 'react';
 
-interface RenderThemeProps {
-    children: ReactNode
-}
-
-export const RenderTheme = ({children}: RenderThemeProps) => {
+export const renderTheme = (children: ReactNode) => {
   return render(
     <ThemeProvider theme={theme}>
       <GlobalStyles />
