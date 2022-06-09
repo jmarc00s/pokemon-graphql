@@ -9,6 +9,7 @@ describe('<Heading />', () => {
 
   it('should render <Heading /> with correct text', () => {
     renderTheme(<Heading>Teste</Heading>);
-    screen.getAllByRole('heading', { name: /Teste/i });
+    const element = screen.getByRole('heading', { name: /Teste/i });
+    expect(element).toBeInTheDocument();
   });
 });
