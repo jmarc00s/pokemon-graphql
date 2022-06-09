@@ -5,8 +5,7 @@ export const GlobalStyles = createGlobalStyle`
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;0,900;1,300;1,700&display=swap');
+    box-sizing: border-box;    
 }
 
 html {
