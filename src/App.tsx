@@ -1,4 +1,5 @@
 import { useQuery } from '@apollo/client';
+import { Outlet } from '@tanstack/react-location';
 import styled from 'styled-components';
 import Heading from './components/Heading';
 import PokemonCard from './components/PokemonCard';
@@ -15,16 +16,9 @@ const Container = styled.div`
 `;
 
 function App() {
-  const { data, loading } = useQuery(GET_POKEMONS);
-
-  if (loading) {
-    return <p>Carregando...</p>;
-  }
-
   return (
     <Container>
-      <Heading>Pokedex with GraphQL</Heading>
-      <PokemonGrid pokemons={data.pokemons} />
+      <Outlet />
     </Container>
   );
 }
