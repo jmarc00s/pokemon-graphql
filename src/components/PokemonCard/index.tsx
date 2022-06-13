@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-location';
 import React from 'react';
 import { Pokemon } from '../../models/pokemon';
 import { Container, PokemonImage, PokemonName } from './styles';
@@ -8,10 +9,12 @@ interface PokemonCardProps {
 
 const PokemonCard = ({ pokemon }: PokemonCardProps) => {
   return (
-    <Container data-testid="pokemon-card">
-      <PokemonImage src={pokemon.image} />
-      <PokemonName>{pokemon.name}</PokemonName>
-    </Container>
+    <Link to={`/details/${pokemon.id}`}>
+      <Container data-testid="pokemon-card">
+        <PokemonImage src={pokemon.image} />
+        <PokemonName>{pokemon.name}</PokemonName>
+      </Container>
+    </Link>
   );
 };
 
