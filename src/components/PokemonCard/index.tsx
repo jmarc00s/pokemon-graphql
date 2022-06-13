@@ -1,6 +1,6 @@
 import React from 'react';
 import { Pokemon } from '../../models/pokemon';
-import { Container, PokemonImage, PokemonName } from './style';
+import { Container, PokemonImage, PokemonName } from './styles';
 
 interface PokemonCardProps {
   pokemon: Pokemon;

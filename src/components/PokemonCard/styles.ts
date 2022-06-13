@@ -11,6 +11,11 @@ export const Container = styled.div`
   min-width: 10rem;
   color: ${theme.typo.colors.primary};
   padding: 0.5rem;
+
+  &:hover {
+    transition: all 0.3s;
+    transform: scale(1.02);
+  }
 `;
 
 export const PokemonName = styled.p`

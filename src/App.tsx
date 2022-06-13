@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import styled from 'styled-components';
 import Heading from './components/Heading';
 import PokemonCard from './components/PokemonCard';
+import PokemonGrid from './components/PokemonGrid';
 import { GET_POKEMONS } from './graphql/querys/pokemons';
 import { Pokemon } from './models/pokemon';
 
@@ -23,9 +24,7 @@ function App() {
   return (
     <Container>
       <Heading>Pokedex with GraphQL</Heading>
-      {data?.pokemons.map((pokemon: Pokemon) => (
-        <PokemonCard key={pokemon.id} pokemon={pokemon} />
-      ))}
+      <PokemonGrid pokemons={data.pokemons} />
     </Container>
   );
 }
