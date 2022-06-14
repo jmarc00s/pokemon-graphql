@@ -6,7 +6,7 @@ interface PokemonDimensions {
   maximum: string;
 }
 
-interface PokemonTableData {
+export interface PokemonTableData {
   weight: PokemonDimensions;
   height: PokemonDimensions;
   classification: string;

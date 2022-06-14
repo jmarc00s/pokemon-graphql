@@ -21,7 +21,7 @@ const DetailsPage = () => {
   return (
     <section>
       <Heading>Details of pokemon: {data?.pokemon.name}</Heading>
-      <Link to="/">Back</Link>
+      <Link to="/">Go to home</Link>
       {data && (
         <Container>
           <PokemonCard pokemon={data.pokemon} />

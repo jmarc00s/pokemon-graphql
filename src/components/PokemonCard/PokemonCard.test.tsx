@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import PokemonCard from '.';
+import { LocationProvider } from '../../config/routes/mock-location-provider';
 import { Pokemon } from '../../models/pokemon';
 import { renderTheme } from '../../styles/renderTheme';
 
@@ -11,7 +12,11 @@ const POKEMON_MOCK: Pokemon = {
 
 describe('<PokemonCard />', () => {
   beforeEach(() => {
-    renderTheme(<PokemonCard pokemon={POKEMON_MOCK} />);
+    renderTheme(
+      <LocationProvider>
+        <PokemonCard pokemon={POKEMON_MOCK} />
+      </LocationProvider>
+    );
   });
 
   it('should render <PokemonCard />', () => {

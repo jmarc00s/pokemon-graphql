@@ -2,6 +2,7 @@ import PokemonGrid from '.';
 import { screen } from '@testing-library/react';
 import { Pokemon } from '../../models/pokemon';
 import { renderTheme } from '../../styles/renderTheme';
+import { LocationProvider } from '../../config/routes/mock-location-provider';
 
 const POKEMONS: Pokemon[] = [
   {
@@ -13,7 +14,11 @@ const POKEMONS: Pokemon[] = [
 
 describe('<PokemonGrid />', () => {
   beforeEach(() => {
-    renderTheme(<PokemonGrid pokemons={POKEMONS} />);
+    renderTheme(
+      <LocationProvider>
+        <PokemonGrid pokemons={POKEMONS} />
+      </LocationProvider>
+    );
   });
 
   it('should render PokemonGrid', () => {
