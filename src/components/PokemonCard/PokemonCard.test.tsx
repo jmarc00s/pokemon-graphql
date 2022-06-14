@@ -1,4 +1,5 @@
-import { screen } from '@testing-library/react';
+import { createBrowserHistory } from '@tanstack/react-location';
+import { fireEvent, screen } from '@testing-library/react';
 import PokemonCard from '.';
 import { LocationProvider } from '../../config/routes/mock-location-provider';
 import { Pokemon } from '../../models/pokemon';
@@ -27,5 +28,12 @@ describe('<PokemonCard />', () => {
   it('should show correct pokemon name', () => {
     const element = screen.getByText(POKEMON_MOCK.name);
     expect(element).toBeInTheDocument();
+  });
+
+  it('should navigate to details when clicked', () => {
+    const element = screen.getByTestId('pokemon-card');
+    fireEvent.click(element);
+    const history = createBrowserHistory();
+    expect(history.location.pathname).toBe(`/details/${POKEMON_MOCK.id}`);
   });
 });
