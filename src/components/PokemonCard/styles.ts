@@ -11,6 +11,7 @@ export const Container = styled.div`
   min-width: 10rem;
   color: ${theme.typo.colors.primary};
   padding: 0.5rem;
+  cursor: pointer;
 
   &:hover {
     transition: all 0.3s;
@@ -22,8 +23,10 @@ export const PokemonName = styled.p`
   font-size: ${theme.typo.size.large};
   text-align: center;
   padding: 0.5rem;
+  text-decoration: none;
 `;
 
 export const PokemonImage = styled.img`
   max-width: 80%;
+  height: 25rem;
 `;

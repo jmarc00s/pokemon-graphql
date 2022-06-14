@@ -1,8 +1,11 @@
-import { useQuery } from '@apollo/client';
-import { useMatch } from '@tanstack/react-location';
 import React from 'react';
+import { Link, useMatch } from '@tanstack/react-location';
+import { useQuery } from '@apollo/client';
+import Heading from '../../components/Heading';
+import PokemonCard from '../../components/PokemonCard';
+import PokemonTable from '../../components/PokemonTable';
 import { GET_POKEMON_BY_ID } from '../../graphql/querys/pokemon-by-id';
-import { Pokemon } from '../../models/pokemon';
+import { Container } from './style';
 
 const DetailsPage = () => {
   const {
@@ -12,10 +15,21 @@ const DetailsPage = () => {
   const { data, loading } = useQuery(GET_POKEMON_BY_ID(pokemonId));
 
   if (loading) {
-    return <p>Carregando...</p>;
+    return <p>Loading...</p>;
   }
 
-  return <div>Detalhes do pokemon {data?.pokemon.name}</div>;
+  return (
+    <section>
+      <Heading>Details of pokemon: {data?.pokemon.name}</Heading>
+      <Link to="/">Back</Link>
+      {data && (
+        <Container>
+          <PokemonCard pokemon={data.pokemon} />
+          <PokemonTable data={data.pokemon} />
+        </Container>
+      )}
+    </section>
+  );
 };
 
 export default DetailsPage;

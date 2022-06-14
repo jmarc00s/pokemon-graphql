@@ -5,6 +5,15 @@ export const GET_POKEMON_BY_ID = (pokemonId: string) => gql`
             id
             name
             image
+            height {
+                minimum
+                maximum
+            }
+            weight {
+                minimum
+                maximum
+            }
+            classification
         }
     }
 `;

@@ -8,7 +8,7 @@ const HomePage = () => {
   const { data, loading } = useQuery(GET_POKEMONS);
 
   if (loading) {
-    return <p>Carregando...</p>;
+    return <p>Loading...</p>;
   }
 
   return (

@@ -2,6 +2,7 @@ export const theme = {
   colors: {
     primary: '',
     background: '#e5e5e5',
+    gray: '#999',
   },
   typo: {
     size: {

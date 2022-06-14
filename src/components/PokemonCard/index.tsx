@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-location';
+import { Link, useNavigate, useRouter } from '@tanstack/react-location';
 import React from 'react';
 import { Pokemon } from '../../models/pokemon';
 import { Container, PokemonImage, PokemonName } from './styles';
@@ -8,13 +8,17 @@ interface PokemonCardProps {
 }
 
 const PokemonCard = ({ pokemon }: PokemonCardProps) => {
+  const navigate = useNavigate();
+
+  const handlePokemonClick = () => {
+    navigate({ to: `/details/${pokemon.id}` });
+  };
+
   return (
-    <Link to={`/details/${pokemon.id}`}>
-      <Container data-testid="pokemon-card">
-        <PokemonImage src={pokemon.image} />
-        <PokemonName>{pokemon.name}</PokemonName>
-      </Container>
-    </Link>
+    <Container data-testid="pokemon-card" onClick={handlePokemonClick}>
+      <PokemonImage src={pokemon.image} />
+      <PokemonName>{pokemon.name}</PokemonName>
+    </Container>
   );
 };
 
