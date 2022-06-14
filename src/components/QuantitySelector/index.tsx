@@ -16,16 +16,18 @@ const QuantitySelector = (props: QuantitySelectorProps) => {
 
   return (
     <Styled.Container>
-      Set quantities of pokemons to show:
-      {props.quantities.map((quantity, index) => (
-        <Styled.QuantityBadge
-          active={quantity === activeQuantity}
-          onClick={() => handleQuantityClick(quantity)}
-          key={index}
-        >
-          {quantity}
-        </Styled.QuantityBadge>
-      ))}
+      <Styled.Title>Set quantities of pokemons to show:</Styled.Title>
+      <div>
+        {props.quantities.map((quantity, index) => (
+          <Styled.QuantityBadge
+            active={quantity === activeQuantity}
+            onClick={() => handleQuantityClick(quantity)}
+            key={index}
+          >
+            {quantity}
+          </Styled.QuantityBadge>
+        ))}
+      </div>
     </Styled.Container>
   );
 };

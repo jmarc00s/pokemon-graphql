@@ -1,11 +1,21 @@
 import styled from 'styled-components';
 
+export const Title = styled.p`
+  @media screen and (max-width: 600px) {
+    padding: 1rem 0;
+  }
+`;
+
 export const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 2rem;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 export const QuantityBadge = styled.button<{ active: boolean }>`
