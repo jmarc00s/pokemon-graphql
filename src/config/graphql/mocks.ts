@@ -1,9 +1,9 @@
-import { GET_POKEMONS } from '../../graphql/querys/pokemons';
+import { getPokemons } from '../../graphql/querys/pokemons';
 
 export const mocks = [
   {
     request: {
-      query: GET_POKEMONS,
+      query: getPokemons,
     },
     result: {
       data: {
