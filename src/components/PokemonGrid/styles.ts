@@ -5,7 +5,7 @@ export const GridContainer = styled.section`
   grid-template-columns: repeat(3, auto);
   gap: 8px;
 
-  @media screen and (max-width: 968px) {
+  @media screen and (max-width: 1280px) {
     grid-template-columns: repeat(2, auto);
   }
 

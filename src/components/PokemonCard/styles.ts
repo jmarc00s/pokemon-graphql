@@ -9,6 +9,7 @@ export const Container = styled.div`
   border-radius: 0.7rem;
   box-shadow: ${theme.shadow.sm};
   min-width: 10rem;
+  width: 35rem;
   color: ${theme.typo.colors.primary};
   padding: 0.5rem;
   cursor: pointer;
