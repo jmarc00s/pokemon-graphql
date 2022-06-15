@@ -12,7 +12,9 @@ const DetailsPage = () => {
     params: { pokemonId },
   } = useMatch();
 
-  const { data, loading } = useQuery(GET_POKEMON_BY_ID(pokemonId));
+  const { data, loading } = useQuery(GET_POKEMON_BY_ID, {
+    variables: { pokemonId },
+  });
 
   if (loading) {
     return <p>Loading...</p>;
